@@ -25,23 +25,23 @@ enum STATUS_REINJECTION {
 const Icon = ({ id, name }: { id: number; name: string }) => {
   switch (id) {
     case STATUS_REINJECTION.TARGET_CAMPAIGN_NEAR:
-      return <FontAwesomeIcon color="orange" icon={faExclamation} />;
+      return <FontAwesomeIcon fixedWidth color="orange" icon={faExclamation} />;
     case STATUS_REINJECTION.DEADLINE_IS_PASSED:
-      return <FontAwesomeIcon color="black" icon={faBan} />;
+      return <FontAwesomeIcon fixedWidth color="black" icon={faBan} />;
     case STATUS_REINJECTION.ANOMALY:
-      return <FontAwesomeIcon color="red" icon={faTimes} />;
+      return <FontAwesomeIcon fixedWidth color="red" icon={faTimes} />;
     case STATUS_REINJECTION.COMMENT:
-      return <FontAwesomeIcon color="pink" icon={faComment} />;
+      return <FontAwesomeIcon fixedWidth color="pink" icon={faComment} />;
     case STATUS_REINJECTION.NEGATIVE_QUANTITY:
-      return <FontAwesomeIcon color="red" icon={faMinusCircle} />;
+      return <FontAwesomeIcon fixedWidth color="red" icon={faMinusCircle} />;
     case STATUS_REINJECTION.PURCHASE_TYPE_ERROR:
-      return <FontAwesomeIcon color="red" icon={faBug} />;
+      return <FontAwesomeIcon fixedWidth color="red" icon={faBug} />;
     case STATUS_REINJECTION.OPENING_DATE_CHANGED:
-      return <FontAwesomeIcon color="cornflowerblue" icon={faHistory} />;
+      return <FontAwesomeIcon fixedWidth color="cornflowerblue" icon={faHistory} />;
     case STATUS_REINJECTION.SUPPLIER_ERROR:
-      return <FontAwesomeIcon color="red" icon={faExclamationTriangle} />;
+      return <FontAwesomeIcon fixedWidth color="red" icon={faExclamationTriangle} />;
     default:
-      return <FontAwesomeIcon color="black" icon={faQuestion} />;
+      return <FontAwesomeIcon fixedWidth color="black" icon={faQuestion} />;
   }
 };
 
