@@ -4,7 +4,7 @@ import {
   ExpandedState,
   flexRender,
   getCoreRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table";
 
 import Icon from "./Icon";
@@ -15,13 +15,19 @@ const COLUMNS = [
     id: "Status",
     header: "Status",
     accessorKey: "statuses",
-    cell: ({ renderValue }) => renderValue()
+    cell: ({ getValue }) => (
+      <>
+        {getValue().map(({ id, name }) => (
+          <Icon id={id} key={`${id}-${name}`} name={name} />
+        ))}
+      </>
+    ),
   },
   {
     id: "Op Code Source",
     header: "Op Code Source",
-    accessorKey: "campaign_code_source"
-  }
+    accessorKey: "campaign_code_source",
+  },
 ];
 
 const Table = () => {
@@ -31,11 +37,11 @@ const Table = () => {
     data,
     columns: COLUMNS,
     state: {
-      expanded
+      expanded,
     },
     // getSubRows: (row) => row.subRows,
     getCoreRowModel: getCoreRowModel(),
-    debugTable: true
+    debugTable: true,
   });
 
   return (
